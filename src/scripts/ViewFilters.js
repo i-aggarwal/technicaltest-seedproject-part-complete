@@ -13,11 +13,19 @@ class ViewFilters {
   }
 
   addFilterEventHandlers() {
+    this.addProductFilterEventHandlers();
+    this.addProviderFilterEventHandlers();
+  }
+
+  addProductFilterEventHandlers() {
     if (this.productFilters.length) {
       this.productFilters.forEach(element => {
         element.addEventListener("change", this.onProductFilterChange);
       });
     }
+  }
+
+  addProviderFilterEventHandlers() {
     if (this.providerFilters.length) {
       this.providerFilters.forEach(element => {
         element.addEventListener("change", this.onProviderFilterChange);
@@ -26,11 +34,19 @@ class ViewFilters {
   }
 
   removeFilterEventHandlers() {
+    this.removeProductFilterEventHandlers();
+    this.removeProviderFilterEventHandler();
+  }
+
+  removeProductFilterEventHandlers() {
     if (this.productFilters.length) {
       this.productFilters.forEach(element => {
         element.removeEventListener("change", this.onProductFilterChange);
       });
     }
+  }
+
+  removeProviderFilterEventHandler() {
     if (this.providerFilters.length) {
       this.providerFilters.forEach(element => {
         element.removeEventListener("change", this.onProviderFilterChange);
